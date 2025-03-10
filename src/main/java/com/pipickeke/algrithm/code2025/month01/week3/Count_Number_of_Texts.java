@@ -1,8 +1,5 @@
 package com.pipickeke.algrithm.code2025.month01.week3;
 
-import com.sun.org.apache.bcel.internal.generic.RET;
-
-
 /**
  * 题目：2266. 统计打字方案数
  * 标签：分组+数位DP
@@ -25,35 +22,35 @@ import com.sun.org.apache.bcel.internal.generic.RET;
 public class Count_Number_of_Texts {
 
 
-    private int countTexts(String pressedKeys){
-        long ans = 1;
-        int cnt = 0;
-        for (int i = 0; i < pressedKeys.length(); i++) {
-            char ch = pressedKeys.charAt(i);
-            cnt++;
-            if (i == pressedKeys.length()-1 || ch != pressedKeys.charAt(i+1)){
-                ans = ans * (ch != '7' && ch != '9' ? f[cnt] : g[cnt]) %MOD;
-                cnt = 0;
-            }
-        }
-        return (int) ans;
-    }
-
-    private static final int MOD = 1000000007;
-    private static final int MX = 100001;
-    private static final long[] f = new long[MX];
-    private static final long[] g = new long[MX];
-
-    static {
-        f[0] = g[0] = 1;
-        f[1] = g[1] = 1;
-        f[2] = g[2] = 2;
-        f[3] = g[3] = 4;
-        for (int i = 4; i < MX; i++) {
-            f[i] = (f[i-1] + f[i-2] + f[i-3]) %MOD;
-            g[i] = (g[i-1] + g[i-2] + g[i-3] + g[i-4]) %MOD;
-        }
-
-    }
+//    private int countTexts(String pressedKeys){
+//        long ans = 1;
+//        int cnt = 0;
+//        for (int i = 0; i < pressedKeys.length(); i++) {
+//            char ch = pressedKeys.charAt(i);
+//            cnt++;
+//            if (i == pressedKeys.length()-1 || ch != pressedKeys.charAt(i+1)){
+//                ans = ans * (ch != '7' && ch != '9' ? f[cnt] : g[cnt]) %MOD;
+//                cnt = 0;
+//            }
+//        }
+//        return (int) ans;
+//    }
+//
+//    private static final int MOD = 1000000007;
+//    private static final int MX = 100001;
+//    private static final long[] f = new long[MX];
+//    private static final long[] g = new long[MX];
+//
+//    static {
+//        f[0] = g[0] = 1;
+//        f[1] = g[1] = 1;
+//        f[2] = g[2] = 2;
+//        f[3] = g[3] = 4;
+//        for (int i = 4; i < MX; i++) {
+//            f[i] = (f[i-1] + f[i-2] + f[i-3]) %MOD;
+//            g[i] = (g[i-1] + g[i-2] + g[i-3] + g[i-4]) %MOD;
+//        }
+//
+//    }
 
 }
