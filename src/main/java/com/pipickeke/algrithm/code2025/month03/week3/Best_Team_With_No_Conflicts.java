@@ -1,8 +1,6 @@
-package com.pipickeke.algrithm.code2025.month03.week2;
+package com.pipickeke.algrithm.code2025.month03.week3;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
 
 /**
@@ -16,7 +14,8 @@ import java.util.List;
  *
  */
 
-public class Best_Team_With_No_Conflicts_3 {
+public class Best_Team_With_No_Conflicts {
+
 
 
     private int bestTeamScore(int[] scores, int[] ages){
@@ -25,6 +24,7 @@ public class Best_Team_With_No_Conflicts_3 {
         for (int i = 0; i < n; i++) {
             idx[i] = i;
         }
+
         Arrays.sort(idx, (x,y) -> scores[x] != scores[y] ?
                 scores[x] - scores[y] : ages[x] - ages[y]);
 
@@ -41,6 +41,4 @@ public class Best_Team_With_No_Conflicts_3 {
         }
         return ans;
     }
-
-
 }
