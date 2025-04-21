@@ -1,4 +1,4 @@
-package com.pipickeke.algrithm.code2025.month03.week4;
+package com.pipickeke.algrithm.code2025.month04.week3;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -23,11 +23,9 @@ import java.util.Arrays;
  *
  */
 
-
 public class Distribute_Elements_Into_Two_Arrays_II {
 
     public int[] resultArray(int[] nums) {
-
         int[] sorted = nums.clone();
         Arrays.sort(sorted);
         int n = sorted.length;
@@ -74,8 +72,8 @@ class Fenwick{
 
     public void add(int index){
         while (index < this.tree.length){
-            tree[index]++;
-            index += index&-index;
+            this.tree[index]++;
+            index += index & -index;
         }
     }
 
@@ -83,8 +81,11 @@ class Fenwick{
         int ans = 0;
         while (index > 0){
             ans += this.tree[index];
-            index -= index&-index;
+            index -= index & -index;
         }
         return ans;
     }
 }
+
+
+
